@@ -10,6 +10,7 @@ const Header = () => {
         <Container fluid>
           <Navbar.Brand as={Link} to={"/home"} href="#">
             <img className="ms-5" height={50} src={logo} alt="" />
+            <span className="ms-4 text-primary">Tutor</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -20,8 +21,8 @@ const Header = () => {
             ></Nav>
             <Nav className="me-5">
               <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#deets">Service</Nav.Link>
+              <Nav.Link href="#action2">Service</Nav.Link>
+              <Nav.Link href="#deets">About</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Contact
               </Nav.Link>
