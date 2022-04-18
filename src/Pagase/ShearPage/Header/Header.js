@@ -1,9 +1,16 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../Firebass.init";
 import logo from "../../../img/log.png";
 import "./Header.css";
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const handelSingOut = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -20,17 +27,23 @@ const Header = () => {
               navbarScroll
             ></Nav>
             <Nav className="me-5">
-              <Nav.Link as={Link} to={"/services"} href="#action1">
-                Home
-              </Nav.Link>
               <Nav.Link href="#action2">Service</Nav.Link>
               <Nav.Link href="#deets">About</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="/login">
-                Login
-              </Nav.Link>
+              {user ? (
+                <button
+                  className="bg-danger text-white rounded-pill"
+                  onClick={handelSingOut}
+                >
+                  Sing Out
+                </button>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
