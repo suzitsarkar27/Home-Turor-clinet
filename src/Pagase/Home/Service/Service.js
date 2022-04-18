@@ -8,7 +8,7 @@ const Service = ({ course }) => {
     navigate(`/course/${id}`);
   };
   return (
-    <div className="col-ms-12 col-md-6 col-lg-4  col-lx-3 g-5">
+    <div className="col-ms-12 col-md-6 col-lg-4  col-lx-3 g-5 rounded">
       <div className="card">
         <img height={300} src={img} alt="" />
         <h2>Name:{name}</h2>
@@ -16,7 +16,7 @@ const Service = ({ course }) => {
         <p>{Description}</p>
         <button
           onClick={() => navigatetoServiceDetail(id)}
-          className="bg-danger rounded text-white"
+          className="bg-danger rounded text-white py-2"
         >
           Buy Now
         </button>

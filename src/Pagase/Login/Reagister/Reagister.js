@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../Firebass.init";
 import "./Reagister.css";
 const Reagister = () => {
@@ -68,10 +70,13 @@ const Reagister = () => {
     if (hookError) {
       switch (hookError?.code) {
         case "auth/invalid-email":
+          toast("Invalid email provided, please provide a valid email");
           break;
         case "auth/invalid-password":
+          toast("Wrong password. Intruder!!");
           break;
         default:
+          toast("something went wrong");
       }
     }
   }, [hookError]);
@@ -128,7 +133,7 @@ const Reagister = () => {
 
         {/* {error && <p className="error-message">{error}</p> } */}
         {/* {hookError && <p className="error-message">{hookError?.message}</p>} */}
-        {/* <ToastContainer /> */}
+        <ToastContainer />
       </form>
     </div>
   );

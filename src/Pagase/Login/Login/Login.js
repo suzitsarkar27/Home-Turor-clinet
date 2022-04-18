@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -74,11 +76,14 @@ const Login = () => {
     if (error) {
       switch (error?.code) {
         case "auth/invalid-email":
+          toast("Invalid email provided, please provide a valid email");
           break;
 
         case "auth/invalid-password":
+          toast("Wrong password. Intruder!!");
           break;
         default:
+          toast("something went wrong");
       }
     }
   }, [hookError, googleError]);
@@ -100,6 +105,7 @@ const Login = () => {
         />
         {errors?.password && <p className="error-message">{errors.password}</p>}
         <button>Login</button>
+        <ToastContainer />
         <p>
           Don't have an account?{" "}
           <Link className=" text-decoration-none" to="/reagister">

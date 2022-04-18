@@ -27,10 +27,12 @@ const Header = () => {
               navbarScroll
             ></Nav>
             <Nav className="me-5">
-              <Nav.Link href="home#courses">Courses</Nav.Link>
-              <Nav.Link href="home#about">About</Nav.Link>
-              <Nav.Link eventKey={2} href="home#contact">
-                Contact
+              <Nav.Link href="home#service">Service</Nav.Link>
+              <Nav.Link as={Link} to={"/about"} href="#about">
+                About
+              </Nav.Link>
+              <Nav.Link eventKey={2} as={Link} to={"/blooks"} href="home#Books">
+                Blooks
               </Nav.Link>
               {user ? (
                 <button

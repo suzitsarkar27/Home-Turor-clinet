@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import About from "./Pagase/About/About";
+import Blooks from "./Pagase/Blooks/Blooks";
 import CheackOut from "./Pagase/CheackOut/CheackOut";
 import CoursDatalice from "./Pagase/CurseDetalic/CoursDatalice";
 import Home from "./Pagase/Home/Home/Home";
@@ -21,6 +23,7 @@ function App() {
           path="/course/:courseId"
           element={<CoursDatalice></CoursDatalice>}
         ></Route>
+        <Route path="about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/reagister" element={<Reagister></Reagister>}></Route>
         <Route
@@ -31,6 +34,7 @@ function App() {
             </RequrieAuth>
           }
         ></Route>
+        <Route path="/blooks" element={<Blooks></Blooks>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
