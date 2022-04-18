@@ -27,9 +27,9 @@ const Header = () => {
               navbarScroll
             ></Nav>
             <Nav className="me-5">
-              <Nav.Link href="#action2">Service</Nav.Link>
-              <Nav.Link href="#deets">About</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link href="home#courses">Courses</Nav.Link>
+              <Nav.Link href="home#about">About</Nav.Link>
+              <Nav.Link eventKey={2} href="home#contact">
                 Contact
               </Nav.Link>
               {user ? (

@@ -59,7 +59,7 @@ const CourseInfro = [
 ];
 const Services = () => {
   return (
-    <div id="services" className="row mt-5">
+    <div id="courses" className="row mt-5">
       <h2 className="text-primary">Oure course</h2>
       {CourseInfro.map((course) => (
         <Service key={course.is} course={course}></Service>
