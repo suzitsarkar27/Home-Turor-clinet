@@ -1,7 +1,7 @@
 
 Code Link :https://github.com/programming-hero-web-course-4/independent-service-provider-suzitsarkar27
 
-Live Link 👍 
+Live Link 👍 Live Link 👍 https://assignment-10-react-firebass.firebaseapp.com/
 
 
 
